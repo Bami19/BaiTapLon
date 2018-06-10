@@ -9,6 +9,7 @@ public abstract class NhanVien {
 
 	public static final String GIO_DEN_CHUAN = "7:30";
 	public static final String GIO_VE_CHUAN = "17:30";
+	private String msnv; // Mã số nhân viên 
 	private String hoTen;
 	private Date ngSinh;
 	private CMT cmt;
@@ -23,8 +24,9 @@ public abstract class NhanVien {
 	private ArrayList<GioLamViec> listGioLamViec;
 	
 
-	public NhanVien( String hoTen, Date ngSinh, CMT cmt, String queQuan, String danToc, String quocTich,
+	public NhanVien(String msnv, String hoTen, Date ngSinh, CMT cmt, String queQuan, String danToc, String quocTich,
 			String diaChi, String email, String soDT, Date ngayBD, Date ngayRoi) {
+		this.msnv = msnv;
 		this.hoTen = hoTen;
 		this.ngSinh = ngSinh;
 		this.cmt = cmt;
@@ -160,8 +162,5 @@ public abstract class NhanVien {
 
 	public void setNgayRoi(Date ngayRoi) {
 		this.ngayRoi = ngayRoi;
-	}
-
-	
-	
+	}	
 }

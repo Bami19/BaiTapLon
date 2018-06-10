@@ -6,20 +6,17 @@ import java.util.Scanner;
 public class PhongBan {
 
 	private String tenPhongBan;
-	private int soNV;
-	private ArrayList<NhanVien> danhsachNV;
-	private NhanVien quanLy;
-	private NhanVien[] phoQuanLy;
+	private ArrayList<NhanVien> danhsachNV; // Gồm cả nhân viên cơ hữu và hợp đồng
+	private TruongPhong truongPhong;
+	private PhoPhong phoPhong;
 
 	
-	public PhongBan(String tenPhongBan, int soNV, ArrayList<NhanVien> danhsachNV, NhanVien quanLy,
-			NhanVien[] phoQuanLy) {
+	public PhongBan(String tenPhongBan, ArrayList<NhanVien> danhsachNV, TruongPhong truongPhong, PhoPhong phoPhong) {
 		super();
 		this.tenPhongBan = tenPhongBan;
-		this.soNV = soNV;
 		this.danhsachNV = danhsachNV;
-		this.quanLy = quanLy;
-		this.phoQuanLy = phoQuanLy;
+		this.truongPhong = truongPhong;
+		this.phoPhong = phoPhong;
 	}
 
 
@@ -87,17 +84,43 @@ public class PhongBan {
 		this.danhsachNV = danhsachNV;
 	}
 
-	public NhanVien getQuanLy() {
-		return quanLy;
-	}
+//	public NhanVien getQuanLy() {
+//		return quanLy;
+//	}
+//
+//	public void setQuanLy(NhanVien quanLy) {
+//		this.quanLy = quanLy;
+//	}
+//
+//	public NhanVien[] getPhoQuanLy() {
+//		return phoQuanLy;
+//	}
+//
 
-	public void setQuanLy(NhanVien quanLy) {
-		this.quanLy = quanLy;
+	
+	// Sinh dữ liệu giả cho test
+	private PhongBan() {
+		
 	}
+	
+	public static PhongBan sinhDuLieu {
+		PhongBan phongBan = new PhongBan();
+		
+		// Dữ liệu nhân viên
+		// 20 nhan vien hop dong
+		CanBoHopDong[] dsCanBoHopDong = new CanBoHopDong[20];
+		for (int i = 0; i < 20; i++) {
+			CanBoHopDong cbhd = CanBoHopDong.sinhDuLieu(Integer.toString(i));
+			dsCanBoHopDong[i] = cbhd;
+		}
 
-	public NhanVien[] getPhoQuanLy() {
-		return phoQuanLy;
+		// 100 nhan vien co huu
+		CanBoCoHuu[] dsCanBoCoHuu = new CanBoCoHuu[100];
+		for (int i = 0; i < 100; i++) {
+			CanBoCoHuu cbch = CanBoCoHuu.sinhDuLieu(Integer.toString(i));
+			dsCanBoCoHuu[i] = cbch;
+		}
+
 	}
-
 	
 }

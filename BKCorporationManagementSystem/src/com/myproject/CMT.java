@@ -7,6 +7,12 @@ public class CMT {
 	private Date ngayCap;
 	private String noiCap;
 	
+	public CMT(String soID, Date ngayCap, String noiCap) {
+		this.soID = soID;
+		this.ngayCap = ngayCap;
+		this.noiCap = noiCap;
+	}
+	
 	public String getSoID() {
 		return soID;
 	}

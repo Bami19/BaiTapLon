@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class CanBoQuanLy extends CanBoCoHuu implements QuanLy{
 
-	public CanBoQuanLy(String hoTen, Date ngSinh, CMT cmt, String queQuan, String danToc, String quocTich,
+	public CanBoQuanLy(String msnv, String hoTen, Date ngSinh, CMT cmt, String queQuan, String danToc, String quocTich,
 			String diaChi, String email, String soDT, Date ngayBD, Date ngayRoi, double heSoLuong) {
-		super(hoTen, ngSinh, cmt, queQuan, danToc, quocTich, diaChi, email, soDT, ngayBD, ngayRoi, heSoLuong);
+		super(msnv, hoTen, ngSinh, cmt, queQuan, danToc, quocTich, diaChi, email, soDT, ngayBD, ngayRoi, heSoLuong);
 		// TODO Auto-generated constructor stub
 	}
 	private CongTy congTyQuanLy;
