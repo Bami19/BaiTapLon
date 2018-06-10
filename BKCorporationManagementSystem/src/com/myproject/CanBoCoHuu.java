@@ -26,6 +26,8 @@ public class CanBoCoHuu extends NhanVien{
 		this.heSoLuong = heSoLuong;
 	}
 	
+
+	// test 
 	
 	
 }
