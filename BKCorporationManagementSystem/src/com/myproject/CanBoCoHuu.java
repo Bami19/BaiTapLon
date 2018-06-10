@@ -23,13 +23,17 @@ public class CanBoCoHuu extends NhanVien{
 	public double getHeSoLuong() {
 		return heSoLuong;
 	}
+	
 	public void setHeSoLuong(double heSoLuong) {
 		this.heSoLuong = heSoLuong;
 	}
 	
 	// Sinh dữ liệu giả cho test
-		public static CanBoCoHuu sinhDuLieu(String soThuTu) {
+		public static CanBoCoHuu sinhDuLieu(String maSoPhong, String soThuTu) {
 			try {
+				// Ma So nhan vien
+				String msnv = maSoPhong + "CBCH" + soThuTu;
+				
 				// Ngay sinh
 				SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
 				String ngaySinhString = "31-08-1990 09:30:00";
@@ -44,9 +48,9 @@ public class CanBoCoHuu extends NhanVien{
 				String ngayVaoCongTyString = "31-08-2013 10:00:00";
 				Date ngayVaoCongTy = sdf.parse(ngayVaoCongTyString);
 				
-				CanBoCoHuu cbch = new CanBoCoHuu("CBCoHuu Vu Thi A"+soThuTu, 
+				CanBoCoHuu cbch = new CanBoCoHuu(msnv, "CBCoHuu Vu Thi A"+soThuTu, 
 						ngaySinh, cmt, "Hai Duong", "Kinh", "Viet Nam", "Ha Noi", 
-						"cbch"+soThuTu+"@bkCoporation.com.vn", "1234556789", ngayVaoCongTy, null, 3);
+						msnv+"@bkCoporation.com.vn", "1234556789", ngayVaoCongTy, null, 3);
 				return cbch;
 			}
 			catch (Exception e) {     

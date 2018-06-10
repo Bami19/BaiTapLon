@@ -1,6 +1,8 @@
 package com.myproject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class PhongBan {
@@ -68,13 +70,13 @@ public class PhongBan {
 		this.tenPhongBan = tenPhongBan;
 	}
 
-	public int getSoNV() {
-		return soNV;
-	}
-
-	public void setSoNV(int soNV) {
-		this.soNV = soNV;
-	}
+//	public int getSoNV() {
+//		return soNV;
+//	}
+//
+//	public void setSoNV(int soNV) {
+//		this.soNV = soNV;
+//	}
 
 	public ArrayList<NhanVien> getDanhsachNV() {
 		return danhsachNV;
@@ -103,24 +105,31 @@ public class PhongBan {
 		
 	}
 	
-	public static PhongBan sinhDuLieu {
+	public static PhongBan sinhDuLieu(String maSoPhong) {
 		PhongBan phongBan = new PhongBan();
+		NhanVien[] danhSachNhanVien = new NhanVien[120];
 		
 		// Dữ liệu nhân viên
 		// 20 nhan vien hop dong
-		CanBoHopDong[] dsCanBoHopDong = new CanBoHopDong[20];
 		for (int i = 0; i < 20; i++) {
-			CanBoHopDong cbhd = CanBoHopDong.sinhDuLieu(Integer.toString(i));
-			dsCanBoHopDong[i] = cbhd;
+			CanBoHopDong cbhd = CanBoHopDong.sinhDuLieu(maSoPhong, Integer.toString(i));
+			danhSachNhanVien[i] = cbhd;
 		}
-
 		// 100 nhan vien co huu
-		CanBoCoHuu[] dsCanBoCoHuu = new CanBoCoHuu[100];
 		for (int i = 0; i < 100; i++) {
-			CanBoCoHuu cbch = CanBoCoHuu.sinhDuLieu(Integer.toString(i));
-			dsCanBoCoHuu[i] = cbch;
+			CanBoCoHuu cbch = CanBoCoHuu.sinhDuLieu(maSoPhong, Integer.toString(i));
+			danhSachNhanVien[i + 20] = cbch;
 		}
+		phongBan.danhsachNV = new ArrayList<>(Arrays.asList(danhSachNhanVien));
+		
+		// Dữ liệu trưởng phòng
+		TruongPhong truongPhong = TruongPhong.sinhDuLieu(maSoPhong);
 
+		// Dữ liệu pho phong
+		PhoPhong pp = PhoPhong.sinhDuLieu(maSoPhong);
+		phongBan.phoPhong = pp;
+		
+		return phongBan;
 	}
 	
 }

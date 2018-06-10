@@ -4,16 +4,20 @@ import java.util.ArrayList;
 
 public class CongTy {
 
+	private String masoCongTy;
 	private String tenCongTy;
 	private PhongBan[] danhSachPhongBan;
 	private GiamDoc giamDoc;
 	private PhoGiamDoc[] danhSachPhoGiamDoc;
+	private CanBoQuanLy canBoQuanLy;
 	
-	public CongTy(String tenCongTy, PhongBan[] phongBan, GiamDoc giamDoc, PhoGiamDoc[] phoGiamDoc) {
+	public CongTy(String masoCongTy, String tenCongTy, PhongBan[] danhSachPhongBan, GiamDoc giamDoc, PhoGiamDoc[] danhSachPhoGiamDoc, CanBoQuanLy canBoQuanLy) {
+		this.masoCongTy = masoCongTy;
 		this.tenCongTy = tenCongTy;
-		this.phongBan = phongBan;
+		this.danhSachPhongBan = danhSachPhongBan;
 		this.giamDoc = giamDoc;
-		this.phoGiamDoc = phoGiamDoc;
+		this.danhSachPhoGiamDoc = danhSachPhoGiamDoc;
+		this.canBoQuanLy = canBoQuanLy;
 	}
 
 	public String getTenCongTy() {
@@ -27,7 +31,6 @@ public class CongTy {
 	// Sinh dữ liệu giả cho test
 		public static CongTy sinhDuLieu() {
 			// 3 Phong Ban
-			
 			
 //			TongCongTy tongCongTy = new TongCongTy();
 //			tongCongTy.tenTapDoan = "BKCoporation";

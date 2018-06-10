@@ -12,7 +12,7 @@ public class CMT {
 		this.ngayCap = ngayCap;
 		this.noiCap = noiCap;
 	}
-	
+
 	public String getSoID() {
 		return soID;
 	}

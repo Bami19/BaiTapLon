@@ -8,7 +8,7 @@ public class ChuTich extends CanBoCoHuu implements QuanLy, LanhDao{
 
 	public ChuTich(String msnv, String hoTen, Date ngSinh, CMT cmt, String queQuan, String danToc, String quocTich, String diaChi,
 			String email, String soDT, Date ngayBD, Date ngayRoi, double heSoLuong) {
-		super(hoTen, ngSinh, cmt, queQuan, danToc, quocTich, diaChi, email, soDT, ngayBD, ngayRoi, heSoLuong);
+		super(msnv, hoTen, ngSinh, cmt, queQuan, danToc, quocTich, diaChi, email, soDT, ngayBD, ngayRoi, heSoLuong);
 	}
 
 	private double phuCapQLChuTich = 0.05;
@@ -28,7 +28,7 @@ public class ChuTich extends CanBoCoHuu implements QuanLy, LanhDao{
 	public static ChuTich sinhDuLieu() {
 		try {
 			// Ma so nhan vien
-			
+			String msnv = "chu_tich";
 			
 			// Ngay sinh
 			SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
@@ -44,7 +44,7 @@ public class ChuTich extends CanBoCoHuu implements QuanLy, LanhDao{
 			String ngayVaoCongTyString = "31-08-2010 10:00:00";
 			Date ngayVaoCongTy = sdf.parse(ngayVaoCongTyString);
 			
-			ChuTich chuTich = new ChuTich("Chu Tich", ngaySinh, cmt, "TP Hà Nội", "Kinh", "Viet Nam", "TP Hà Nội", "ct@bkCoporation.com.vn", "0123456789", ngayVaoCongTy, null, 10);
+			ChuTich chuTich = new ChuTich(msnv, "Chu Tich Tran Van B", ngaySinh, cmt, "TP Hà Nội", "Kinh", "Viet Nam", "TP Hà Nội", "ct@bkCoporation.com.vn", "0123456789", ngayVaoCongTy, null, 10);
 			
 			return chuTich;
 		}

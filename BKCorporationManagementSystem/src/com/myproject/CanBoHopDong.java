@@ -26,10 +26,10 @@ public class CanBoHopDong extends NhanVien{
 	}
 	
 	// Sinh dữ liệu giả cho test
-	public static CanBoHopDong sinhDuLieu(String soThuTu) {
+	public static CanBoHopDong sinhDuLieu(String maSoPhong, String soThuTu) {
 		try {
 			// Ma so nhan vien
-			String msnv = "CBHD" + soThuTu;
+			String msnv = maSoPhong + "CBHD" + soThuTu;
 			
 			// Ngay sinh
 			SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
@@ -47,7 +47,7 @@ public class CanBoHopDong extends NhanVien{
 			
 			CanBoHopDong cbhd = new CanBoHopDong(msnv, "Nguyen Van A"+soThuTu, 
 					ngaySinh, cmt, "Hai Duong", "Kinh", "Viet Nam", "Ha Noi", 
-					"cbhd"+soThuTu+"@bkCoporation.com.vn", "1234556789", ngayVaoCongTy, null, 5e6);
+					msnv+"@bkCoporation.com.vn", "1234556789", ngayVaoCongTy, null, 5e6);
 			return cbhd;
 		}
 		catch (Exception e) {     
